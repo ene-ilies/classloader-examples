@@ -32,7 +32,7 @@ public class CustomClassLoader extends ClassLoader {
             }
 
             return defineClass(name, buffer, 0, buffer.length);
-        } else if (name.startsWith("ro.bogdan.ilies.util.") || name.equals("ro.bogdan.ilies.factory.FactoryTest")) {
+        } else if (name.startsWith("ro.bogdan.ilies.util.") || name.equals("ro.bogdan.ilies.factory.FactoryTest") || name.endsWith("TestCase")) {
             URL resource = super.getResource(name.replace(".", "/") + ".class");
             byte[] buffer = null;
             try {
